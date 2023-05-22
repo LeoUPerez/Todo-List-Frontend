@@ -1,0 +1,9 @@
+#card_info{
+    animation-name: Card_Info;
+    animation-duration: 1s;
+}
+@keyframes Card_Info{
+    from{
+        margin-right:50%;
+    }
+}
