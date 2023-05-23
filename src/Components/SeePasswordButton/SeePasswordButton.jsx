@@ -1,10 +1,13 @@
-import React from 'react'
-import { Seepassword } from '../../Utilities/SeePassword';
+import React, { useRef } from 'react'
+import { Seepassword } from './SeePassword';
 
-const SeePassword = () => {
+const SeePasswordButton = ({Input}) => {
+  
+  const PasswordBtn = useRef();
+
   return (
-    <i onClick={Seepassword} className="fa-solid fa-eye text-black text-xl absolute right-2 cursor-pointer"></i>
+    <i onClick={()=>{Seepassword(Input, PasswordBtn)}} ref={PasswordBtn} className="fa-solid fa-eye-slash text-black text-xl absolute right-2 cursor-pointer"></i>
   )
 }
 
-export default SeePassword
+export default SeePasswordButton;
