@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import Register from '../../Components/Register/Register';
 import Card_Info from '../../Components/Card_Info/Card_Info';
 import { Login_Sesion } from '../../Services/Login_API';
@@ -9,6 +9,7 @@ const Login = () => {
   const [OpenRegister, setOpenRegister] = useState(false);
   const [User, setUser] = useState("");
   const [Password, setPassword] = useState("");
+  const InputPassword = useRef();
 
   const Onchange = (setState) => (event) => {
     setState(event.target.value);
@@ -30,8 +31,8 @@ const Login = () => {
         <form className='w-3/4 h-full border-2 border-black flex justify-center items-center flex-col gap-4'>
           <input onChange={Onchange(setUser)} type="text" value={User} className='w-1/2 min-h-[6%] p-1 rounded-lg'/>
           <div className='w-1/2 min-h-[6%] flex gap-1 justify-center items-center relative'>
-           <input onChange={Onchange(setPassword)} type="password" value={Password} className='w-full h-full p-1 rounded-lg '/>
-           <SeePasswordButton/>
+           <input onChange={Onchange(setPassword)} ref={InputPassword} type="password" value={Password} className='w-full h-full p-1 rounded-lg'/>
+           <SeePasswordButton Input={InputPassword} />
           </div>
           <button onClick={(e)=>{e.preventDefault(); Login_Sesion(User, Password)}}>Iniciar sesion</button>
         </form>
