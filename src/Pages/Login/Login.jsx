@@ -28,10 +28,10 @@ const Login = () => {
      !OpenRegister &&
      <div className="w-2/5 h-3/5 rounded-xl bg-blue-400 relative flex">
         <Card_Info data="Login"/>
-        <form className='w-3/4 h-full border-2 border-black flex justify-center items-center flex-col gap-4'>
-          <input onChange={Onchange(setUser)} type="text" value={User} className='w-1/2 min-h-[6%] p-1 rounded-lg'/>
+        <form className='w-3/4 h-full flex justify-center items-center flex-col gap-4'>
+          <input onChange={Onchange(setUser)} type="text" name='Username' value={User} className='w-1/2 min-h-[6%] p-1 rounded-lg' placeholder='Username'/>
           <div className='w-1/2 min-h-[6%] flex gap-1 justify-center items-center relative'>
-           <input onChange={Onchange(setPassword)} ref={InputPassword} type="password" value={Password} className='w-full h-full p-1 rounded-lg'/>
+           <input onChange={Onchange(setPassword)} ref={InputPassword} type="password" name='Password' value={Password} className='w-full h-full p-1 rounded-lg' placeholder='Password'/>
            <SeePasswordButton Input={InputPassword} />
           </div>
           <button onClick={(e)=>{e.preventDefault(); Login_Sesion(User, Password)}}>Iniciar sesion</button>
