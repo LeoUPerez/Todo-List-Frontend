@@ -1,0 +1,12 @@
+#container_register{
+    animation-name: container_register;
+    animation-duration: 1.5s;
+}
+
+@keyframes container_register {
+    from{
+        opacity: 0;
+    }to{
+        opacity: 1;
+    }
+}
