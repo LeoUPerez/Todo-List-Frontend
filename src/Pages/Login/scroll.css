@@ -1,0 +1,12 @@
+#container_login{
+    animation-name: container_login;
+    animation-duration: 1.5s;
+}
+
+@keyframes container_login {
+    from{
+        opacity: 0;
+    }to{
+        opacity: 1;
+    }
+}
